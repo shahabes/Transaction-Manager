@@ -24,6 +24,10 @@ public class Account {
     public TransactionMemento start(){
         return new TransactionMemento(this.balance);
     }
+    
+    public TransactionMemento end(){
+        return this.start();
+    }
 
     public void rollBack(TransactionMemento transactionMemento){
         this.balance = transactionMemento.getBalance();
